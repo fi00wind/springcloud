@@ -1,0 +1,8 @@
+zuul:
+  routes:
+    api-test:
+      path: /test/**
+      serviceId: cloudDemo-test
+    api-user:
+      path: /user/**
+      serviceId: cloudDemo-user
