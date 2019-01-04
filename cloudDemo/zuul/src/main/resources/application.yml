@@ -1,0 +1,32 @@
+#eureka配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8010/eureka
+spring:
+  #服务名称
+  application:
+    name: cloud-zuul
+  cloud:
+  #从config配置中心里获取配置网关路由的信息
+    config:
+      discovery:
+        service-id: config-server
+        enabled: true
+      profile: dev
+
+server:
+  port: 80
+#zuul:
+#  routes:
+#    api-test:
+#      path: /test/**
+#      serviceId: cloudDemo-test
+#    api-user:
+#      path: /user/**
+#      serviceId: cloudDemo-user
+
+#ribbon配置服务超时时间
+ribbon:
+  ReadTimeout: 5000
+  ConnectionTimeout: 5000

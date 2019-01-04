@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: clouddemo-test
+server:
+  port: 8030
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+#        timeout:
+#          enabled: false
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+
+#eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8010/eureka
+  instance:
+    lease-expiration-duration-in-seconds: 2
+    lease-renewal-interval-in-seconds: 1
+
+
+
