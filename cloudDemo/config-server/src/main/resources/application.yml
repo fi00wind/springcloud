@@ -10,6 +10,6 @@ spring:
       server:
         git:
           uri: https://github.com/fi00wind/springcloud.git
-          search-paths: config
+          search-paths: cloudDemo/config
 server:
   port: 8888
